@@ -1,9 +1,7 @@
 Getting and Cleaning Data Course Project
 ========================================
 
-Summary: 
-________
-
+###Summary: 
 This repository contains an R script Run_analysis.R for tidying data from the UCI Human Activity Recognition Using Smartphones Data Set so that it can be used for further analysis. 
 
 Raw data and further information about the data can be found at:
@@ -14,10 +12,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 
 
-Description:
-____________
-
-
+###Description:
 The script run_analysis.R processes data from the UCI data set. The script relies  on a particular directory structure, with the working directory containing a folder UCI HAR Dataset with subfolders test and train. The script requires the dplyr package.
   
 
