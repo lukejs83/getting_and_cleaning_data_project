@@ -6,9 +6,9 @@ This code book contains information on variables, study design, and choices made
 Variables:
 ==========
 
-*tidy_data: 10299 by 68 data frame containing subjectid, activity, mean, and standard deviation for each observation.
+* tidy_data: 10299 by 68 data frame containing subjectid, activity, mean, and standard deviation for each observation.
 
-*tidy_mean: 180 by 68 data frame that contains mean of tidy data by subjectid and activity
+* tidy_mean: 180 by 68 data frame that contains mean of tidy data by subjectid and activity
 
 
 ###Column names for tidy_data and tidy_mean:
@@ -24,7 +24,9 @@ Variables:
 Study design:
 =============
 
-For information on how the data was collected, please see the README.txt and features_info.txt files included with the raw data. Alternatively, the data set website (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) contains the same information.
+For information on how the data was collected, please see the README.txt and features_info.txt files included with the raw data. Alternatively, the data set website contains the same information.
+
+    http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 
 Choices made:
