@@ -13,8 +13,8 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 
 ###Description:
-The script run_analysis.R processes data from the UCI data set. The script relies  on a particular directory structure, with the working directory containing a folder UCI HAR Dataset with subfolders test and train. The script requires the dplyr package.
+The script run_analysis.R processes data from the UCI data set. The appropriate data from the UCI data set should be placed in the working directory. The script requires the dplyr package.
   
 
-The script first loads and combines the training and test data sets into one data frame. It then determine which columns of the combined data contain means or standard deviations. Then, the mean and standard deviation columns are combined with the appropriate subject and activity labels into a data frame tidy_data, and provided with suitably descriptive names. Finally, the mean for each variable is computed per subject and per activity and stored in data frame tidy_mean.
+The script first loads and combines the training and test data sets into one data frame. It then determine which columns of the combined data contain means or standard deviations based on the names in features.txt. Then, the mean and standard deviation columns are combined with the appropriate subject and activity labels into a data frame tidy_data, and provided with suitably descriptive names. Next, the mean for each variable is computed per subject and per activity and stored in data frame tidy_mean. Finally, tidy_mean is saved in the working directory.
 

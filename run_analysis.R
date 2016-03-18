@@ -2,23 +2,23 @@
 library(dplyr)
 
 ########
-#Specify locations of as received data files. File should be unzipped into working directory.
-#Data from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+#Specify locations of as received data files. Data files should be in working directory.
+#Data URL: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 ########
 
 #test data set locations
-subject_test_name <-"./UCI HAR Dataset/test/subject_test.txt"
-X_test_name <-"./UCI HAR Dataset/test/X_test.txt"
-y_test_name <-"./UCI HAR Dataset/test/y_test.txt"
+subject_test_name <-"subject_test.txt"
+X_test_name <-"X_test.txt"
+y_test_name <-"y_test.txt"
 
 #features file
-features_key_file <- "./UCI HAR Dataset/features.txt"
-activities_key_file <- "./UCI HAR Dataset/activity_labels.txt"
+features_key_file <- "features.txt"
+activities_key_file <- "activity_labels.txt"
 
 #training data set locations
-subject_train_name <-"./UCI HAR Dataset/train/subject_train.txt"
-X_train_name <-"./UCI HAR Dataset/train/X_train.txt"
-y_train_name <-"./UCI HAR Dataset/train/y_train.txt"
+subject_train_name <-"subject_train.txt"
+X_train_name <-"X_train.txt"
+y_train_name <-"y_train.txt"
 
 
 ########
@@ -84,7 +84,18 @@ tidy_data$activity <- as.factor(tidy_data$activity)
 levels(tidy_data$activity) <- make.names(tolower(activities_key$V2))
 
 ########################
-#compute mean by subject and activity and store in a second data frame
+#compute mean by subject and activity and store in a second data frame. Update names to highlight averaging.
 #########################
 
-tidy_mean <- tidy_data %>% group_by(subjectid,activity) %>% summarise_each(funs(mean(., na.rm = TRUE)))
+tidy_average <- tidy_data %>% group_by(subjectid,activity) %>% summarise_each(funs(mean(., na.rm = TRUE)))
+
+names(tidy_average)[-(1:2)] <- paste("Average",names(tidy_average)[-(1:2)],sep = "")
+
+#########
+# Save tidy_average
+########
+output_name <- "tidy_average.txt"
+
+write.table(x = tidy_average, file = output_name, row.name=FALSE)
+
+
